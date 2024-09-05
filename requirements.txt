@@ -1,5 +1,4 @@
 rouge-score
 scikit-learn
-torch torchvision torchaudio
 datasets
-transformers
+transformers[torch]
