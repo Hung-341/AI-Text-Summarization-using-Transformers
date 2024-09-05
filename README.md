@@ -65,7 +65,7 @@ pip install -r requirements.txt
 Download the dataset using Hugging Face's Datasets API:
 ```python
 from datasets import load_dataset
-dataset = load_dataset('cnn_dailymail', '3.0.0')
+dataset = load_dataset("abisee/cnn_dailymail", "3.0.0")
 ```
 
 ### 2. Preprocess Data
