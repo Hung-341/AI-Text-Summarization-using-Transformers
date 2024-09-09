@@ -31,17 +31,23 @@ class TextSumPreprocess:
         return encoded_dict['input_ids'], encoded_dict['attention_mask']
 
     def preprocess(self, text):
-        cleaned_text = self.cleaned_text(text)
+        cleaned_text = self.clean_text(text)
         input_ids, attention_mask = self.tokenize_text(cleaned_text)
         return input_ids, attention_mask
 
-    if __name__ == '__main__':
-        text = ""
+    def decode_summary(self, summary_ids):
+        return self.tokenizer.decode(summary_ids, skip_special_tokens=True, clean_up_tokenization_spaces=True)
 
-        preprocessor = TextSumPreprocess()
+if __name__ == '__main__':
+    text = ""
 
-        input_ids, attention_mask = preprocessor.preprocess(text)
-       
+    preprocessor = TextSumPreprocess()
+
+    input_ids, attention_mask = preprocessor.preprocess(text)
+
+    decoded_text = preprocessor.decode_summary(input_ids[0])
+
+    print("decoded text: {decoded_text}")
 
 
     
