@@ -6,7 +6,7 @@ from src.models.model import TextSummarizer
 app = Flask(__name__)
 
 # Load the pre-trained summarization model
-summarizer = TextSummarizer(model_name='facebook/bart-large-cnn')
+summarizer = TextSummarizer(model_name='facebook/bart-large')
 
 
 @app.route('/')
